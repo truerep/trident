@@ -11,8 +11,8 @@ const TopicSelectionContainer = () => {
 
   const router = useRouter();
 
-  const handleContinue = () => {
-    if (!selectedTopic) return;
+  const handleContinue = (selectedTopic) => {
+    // if (!selectedTopic) return;
 
     const tableNames = [selectedTopic.dataSource];
     sessionStorage.setItem('tableNames', JSON.stringify(tableNames));

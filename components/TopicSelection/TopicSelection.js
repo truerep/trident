@@ -18,7 +18,10 @@ const TopicSelection = ({selectedTopic, setSelectedTopic, handleContinue}) => (
           <TopicCard
             key={topic.id}
             isSelected={selectedTopic?.id === topic.id}
-            onClick={() => setSelectedTopic(topic)}
+            onClick={() => {
+              // setSelectedTopic(topic);
+              handleContinue(topic);
+            }}
           >
             <TopicContent>
               <TopicIcon>{topic.icon}</TopicIcon>
@@ -36,13 +39,13 @@ const TopicSelection = ({selectedTopic, setSelectedTopic, handleContinue}) => (
         ))}
       </TopicsGrid>
 
-      {selectedTopic && (
+      {/* {selectedTopic && (
         <ButtonContainer>
           <Button onClick={handleContinue}>
             Continue
           </Button>
         </ButtonContainer>
-      )}
+      )} */}
     </ContentWrapper>
   </Container>
 );
